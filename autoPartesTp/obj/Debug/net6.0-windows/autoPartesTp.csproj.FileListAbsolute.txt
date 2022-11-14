@@ -1,0 +1,94 @@
+D:\Archivos c#\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\autoPartesTp.exe
+D:\Archivos c#\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\autoPartesTp.deps.json
+D:\Archivos c#\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\autoPartesTp.runtimeconfig.json
+D:\Archivos c#\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\autoPartesTp.dll
+D:\Archivos c#\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\autoPartesTp.pdb
+D:\Archivos c#\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.csproj.AssemblyReference.cache
+D:\Archivos c#\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.Form1.resources
+D:\Archivos c#\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.csproj.GenerateResource.cache
+D:\Archivos c#\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Archivos c#\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.AssemblyInfoInputs.cache
+D:\Archivos c#\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.AssemblyInfo.cs
+D:\Archivos c#\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.csproj.CoreCompileInputs.cache
+D:\Archivos c#\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.dll
+D:\Archivos c#\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\refint\autoPartesTp.dll
+D:\Archivos c#\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.pdb
+D:\Archivos c#\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.genruntimeconfig.cache
+D:\Archivos c#\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\ref\autoPartesTp.dll
+D:\Archivos c#\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmVerArticulos.resources
+D:\Archivos c#\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+D:\Archivos c#\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\Ddl.dll
+D:\Archivos c#\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\Ddl.pdb
+D:\Archivos c#\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.csproj.CopyComplete
+D:\Archivos c#\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+D:\Archivos c#\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+D:\Archivos c#\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+D:\Archivos c#\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+D:\Archivos c#\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Archivos c#\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\autoPartesTp.exe
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\autoPartesTp.deps.json
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\autoPartesTp.runtimeconfig.json
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\autoPartesTp.dll
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\autoPartesTp.pdb
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\Ddl.dll
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\Ddl.pdb
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.csproj.AssemblyReference.cache
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.Form1.resources
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmVerArticulos.resources
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.csproj.GenerateResource.cache
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.AssemblyInfoInputs.cache
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.AssemblyInfo.cs
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.csproj.CoreCompileInputs.cache
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.csproj.CopyComplete
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.dll
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\refint\autoPartesTp.dll
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.pdb
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.genruntimeconfig.cache
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\ref\autoPartesTp.dll
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.Properties.Resources.resources
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\Ddl.dll.config
+C:\Users\samir\Desktop\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmAltaAutoParte.resources
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\autoPartesTp.exe
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\autoPartesTp.deps.json
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\autoPartesTp.runtimeconfig.json
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\autoPartesTp.dll
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\autoPartesTp.pdb
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\Ddl.dll
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\Ddl.pdb
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\bin\Debug\net6.0-windows\Ddl.dll.config
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.csproj.AssemblyReference.cache
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.Form1.resources
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmAltaAutoParte.resources
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.Properties.Resources.resources
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.csproj.GenerateResource.cache
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.AssemblyInfoInputs.cache
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.AssemblyInfo.cs
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.csproj.CoreCompileInputs.cache
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.csproj.CopyComplete
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.dll
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\refint\autoPartesTp.dll
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.pdb
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.genruntimeconfig.cache
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\ref\autoPartesTp.dll
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmNuevaFactura.resources
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmVerFactura.resources
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmVerDetalle.resources
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmVerArt.resources
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmAltaMarca.resources
