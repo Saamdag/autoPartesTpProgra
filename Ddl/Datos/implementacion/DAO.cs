@@ -13,19 +13,59 @@ namespace Ddl.Datos.implementacion
 {
     public class DAO : IDAO
     {
-        public bool guardarMa(Marca m)
+        public bool updateAp(AutoParte ap)
         {
-            DataTable d = helper.Instancia().querySqlParam($"insert into Marca values({m.nombre})",null);
-            if (d.Rows.Count > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            List<SqlParameter> list = new List<SqlParameter>();
+            list.Add(new SqlParameter("@id",ap.idArticulo));
+            list.Add(new SqlParameter("@fecha", ap.fechaFabricacion));
+            list.Add(new SqlParameter("@idProd", ap.tipoProduccion.id));
+            list.Add(new SqlParameter("@activo", ap.activo));
+            list.Add(new SqlParameter("@precio", ap.precio));
+            list.Add(new SqlParameter("@idMarca", ap.Marca.id));
+            list.Add(new SqlParameter("@idModelo", ap.Modelo.id));
+
+            return helper.Instancia().EjecutarSQLParam("SpUpAutoPartes", list);
+
+        }
+        public bool deleteAp(int id)
+        {
+            List<SqlParameter> list = new List<SqlParameter>();
+            list.Add(new SqlParameter("@id", id));
+            return helper.Instancia().EjecutarSQLParam("SpDeleteAp",list);
         }
 
+        public bool guardarMa(Marca m)
+        {
+            List<Parametro> values = new List<Parametro>();
+            values.Add(new Parametro("@nombre", m.nombre));
+            return helper.Instancia().EjecutarSQL("spInsertMarcas", values);
+           
+        }
+        public bool guardarVen(Vendedor v)
+        {
+            List<SqlParameter> list = new List<SqlParameter>();
+            list.Add(new SqlParameter("@nobmre", v.nombre));
+            list.Add(new SqlParameter("@apellido", v.apellido));
+            list.Add(new SqlParameter("@tel", v.telefono));
+            list.Add(new SqlParameter("@direc", v.direccion));
+            list.Add(new SqlParameter("@idBarrio", v.barrio.id));
+
+            return helper.Instancia().EjecutarSQLParam("SpInsertVend", list);
+        }
+
+        public bool guardarCli(Cliente c)
+        {
+            List<SqlParameter> list = new List<SqlParameter>();
+            list.Add(new SqlParameter("@nobmre", c.nombre));
+            list.Add(new SqlParameter("@apellido", c.apellido));
+            list.Add(new SqlParameter("@tel", c.telefono));
+            list.Add(new SqlParameter("@direc", c.direccion));
+            list.Add(new SqlParameter("@idBarrio", c.barrio.id));
+            list.Add(new SqlParameter("@tipoClie", c.tipoCliente.idTipo));
+
+
+            return helper.Instancia().EjecutarSQLParam("SpInsertClie", list);
+        }
 
         public bool guardarAp(AutoParte ap)
         {
@@ -130,7 +170,7 @@ namespace Ddl.Datos.implementacion
 
         public List<Cliente> obtenerClientes()
         {
-            DataTable dt = helper.Instancia().querySql("select * from VisClientes", null);
+            DataTable dt = helper.Instancia().querySql("select * from VisClie", null);
             List<Cliente> result = new List<Cliente>();
 
             foreach (DataRow fila in dt.Rows)
@@ -138,9 +178,11 @@ namespace Ddl.Datos.implementacion
                 Cliente cliente = new Cliente();
                 cliente.idCliente = (int)fila[0];
                 cliente.nombre = (string)fila[1];
-                cliente.telefono = Convert.ToInt64(fila[2]);
-                cliente.direccion = fila[3].ToString();
-                cliente.idBarrio = (int)fila[4];
+                cliente.apellido = (string)fila[2];
+                cliente.telefono = Convert.ToInt64(fila[3]);
+                cliente.tipoCliente.tipoCliente= fila[4].ToString();
+                cliente.direccion = fila[5].ToString();
+                cliente.barrio.nombre = (string)fila[6].ToString();
                 result.Add(cliente);
             }
 
@@ -159,7 +201,7 @@ namespace Ddl.Datos.implementacion
                 v.nombre = (string)fila[1];
                 v.telefono = Convert.ToInt64(fila[2]);
                 v.direccion = fila[3].ToString();
-                v.idBarrio = (int)fila[4];
+                v.barrio.id= (int)fila[4];
                 result.Add(v);
             }
 
@@ -271,6 +313,46 @@ namespace Ddl.Datos.implementacion
             return result;
         }
 
-        
+        public List<Barrio> obtenerBarrios()
+        {
+            DataTable dt = helper.Instancia().querySql("select * from Barrios", null);
+            List<Barrio> lst = new List<Barrio>();
+            foreach (DataRow fila in dt.Rows)
+            {
+                Barrio barrio = new Barrio();
+                barrio.id = (int)fila[0];
+                barrio.nombre = fila[1].ToString();
+                lst.Add(barrio);
+            }
+            return lst;
+        }
+
+        public List<Provincia> obtenerProvincias()
+        {
+            DataTable dt = helper.Instancia().querySql("select * from Provincias", null);
+            List<Provincia> lst = new List<Provincia>();
+            foreach (DataRow fila in dt.Rows)
+            {
+                Provincia prov = new Provincia();
+                prov.id = (int)fila[0];
+                prov.nombre = fila[1].ToString();
+                lst.Add(prov);
+            }
+            return lst;
+        }
+
+        public List<Ciudad> obtenerCiudades()
+        {
+            DataTable dt = helper.Instancia().querySql("select * from Ciudades", null);
+            List<Ciudad> lst = new List<Ciudad>();
+            foreach (DataRow fila in dt.Rows)
+            {
+                Ciudad ciudad = new Ciudad();
+                ciudad.id = (int)fila[0];
+                ciudad.nombre = fila[1].ToString();
+                lst.Add(ciudad);
+            }
+            return lst;
+        }
     }
 }

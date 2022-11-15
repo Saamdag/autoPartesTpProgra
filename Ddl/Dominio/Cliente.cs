@@ -13,7 +13,7 @@ namespace Ddl.Dominio
 
         public Cliente() : base()
         {
-
+            tipoCliente = new TipoCliente();
         }
     }
 }

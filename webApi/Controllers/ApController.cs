@@ -64,6 +64,45 @@ namespace webApi.Controllers
             }
         }
 
+        [HttpPut("/UPAP")]
+        public IActionResult PutAutoParte(AutoParte ap)
+        {
+            try
+            {
+                if (ap == null)
+                {
+                    return BadRequest("Datos de autoParte incorrectos!");
+                }
+
+                return Ok(dataApi.updateAp(ap));
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        [HttpDelete("/DAP")]
+        public IActionResult DeleteAutoParte(int id)
+        {
+            try
+            {
+                if (id == null)
+                {
+                    return BadRequest("Datos de autoParte incorrectos!");
+                }
+
+                return Ok(dataApi.deleteAp(id));
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
 
 

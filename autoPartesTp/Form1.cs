@@ -51,5 +51,23 @@ namespace autoPartesTp
             FrmAltaMarca f = new FrmAltaMarca();
             f.ShowDialog();
         }
+
+        private void nuevoToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FrmAltaVendedor frmAlta = new FrmAltaVendedor();
+            frmAlta.ShowDialog();
+        }
+
+        private void nuevoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmAltaCliente cl = new FrmAltaCliente();
+            cl.ShowDialog();
+        }
+
+        private void verToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmVerClientes vcl = new FrmVerClientes();
+            vcl.ShowDialog();
+        }
     }
 }

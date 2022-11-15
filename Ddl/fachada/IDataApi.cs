@@ -19,10 +19,19 @@ namespace Ddl.fachada
         List<Factura> getFacturas(DateTime desde, DateTime hasta);
         List<DetalleFactura> getDetalle(int id);
 
-
+        bool saveVen(Vendedor v);
+        bool saveCli(Cliente c);
         bool saveMa(Marca m);
         bool saveAp(AutoParte ap);
         bool saveFac(Factura f);
+
+        bool updateAp(AutoParte ap);
+
+        bool deleteAp(int id);
+
+        List<Barrio> getBarrios();
+        List<Provincia> getProvincias();
+        List<Ciudad> getCiudades();
 
         List<Cliente> getClientes();
         List<Vendedor> getVendedores();

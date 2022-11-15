@@ -33,7 +33,7 @@ namespace autoPartesTp
             string bodyContent = JsonConvert.SerializeObject(m);
 
 
-            string url = "http://localhost:7035/ADDMARCA";
+            string url = "https://localhost:7035/ADDMARCA";
             var result = await ClientSingleton.GetInstance().PostAsync(url, bodyContent);
 
             if (result.Equals("true"))//servicio.CrearPresupuesto(nuevo)

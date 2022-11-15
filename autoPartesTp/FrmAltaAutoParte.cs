@@ -31,9 +31,8 @@ namespace autoPartesTp
         private async Task guardarAutoparte()
         {
             ap.precio = txtPrecio.Value; 
-            //
-            
             ap.tipoProduccion = (tipoProduccion)cboTipoProd.SelectedItem;
+            ap.fechaFabricacion = dtPicker.Value;
             ap.descripcion = txtDesc.Text;
             ap.Marca = (Marca)cboMarcas.SelectedItem;
             ap.Modelo = (Modelo)cboModelo.SelectedItem;
@@ -45,7 +44,7 @@ namespace autoPartesTp
             string bodyContent = JsonConvert.SerializeObject(ap);
 
             
-            string url = "http://localhost:7035/ADDAP";
+            string url = "https://localhost:7035/ADDAP";
             var result = await ClientSingleton.GetInstance().PostAsync(url, bodyContent);
 
             if (result.Equals("true"))//servicio.CrearPresupuesto(nuevo)

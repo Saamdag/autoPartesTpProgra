@@ -50,7 +50,7 @@ namespace Ddl.fachada
 
         public List<TipoCliente> getTipoCliente()
         {
-            throw new NotImplementedException();
+            return dao.obtenerTipoCliente();
         }
 
         public List<Vendedor> getVendedores()
@@ -86,6 +86,41 @@ namespace Ddl.fachada
         public bool saveMa(Marca m)
         {
             return dao.guardarMa(m);
+        }
+
+        public bool updateAp(AutoParte ap)
+        {
+            return dao.updateAp(ap);
+        }
+
+        public bool deleteAp(int id)
+        {
+            return dao.deleteAp(id);
+        }
+
+        public List<Barrio> getBarrios()
+        {
+            return dao.obtenerBarrios();
+        }
+
+        public List<Provincia> getProvincias()
+        {
+            return dao.obtenerProvincias();
+        }
+
+        public List<Ciudad> getCiudades()
+        {
+            return dao.obtenerCiudades();
+        }
+
+        public bool saveVen(Vendedor v)
+        {
+            return dao.guardarVen(v);
+        }
+
+        public bool saveCli(Cliente c)
+        {
+            return dao.guardarCli(c);
         }
     }
 }

@@ -12,11 +12,17 @@ namespace Ddl.Dominio
         public string apellido { get; set; }
         public Int64 telefono { get; set; }
         public string direccion { get; set; }
-        public int idBarrio { get; set; }
+        public Barrio barrio { get; set; }
+        public Provincia provincia { get; set; }
+        public Ciudad ciudad { get; set; }
+
+
 
         public Persona()
         {
-
+            barrio = new Barrio();
+            provincia = new Provincia();
+            ciudad = new Ciudad();
         }
     }
 }

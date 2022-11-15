@@ -20,12 +20,21 @@ namespace Ddl.Datos.interfaces
         List<Modelo> obtenerModelos();
         List<Marca> obtenerMarcas();
 
+        List<Barrio> obtenerBarrios();
+        List<Provincia> obtenerProvincias();
+        List<Ciudad> obtenerCiudades();
+
+
         List<Cliente> obtenerClientes();
         List<Vendedor> obtenerVendedores();
+
+
         List<TipoCliente> obtenerTipoCliente();
 
-
-
+        bool guardarCli(Cliente c);
+        bool guardarVen(Vendedor v);
+        bool deleteAp(int id);
+        bool updateAp(AutoParte ap);
         bool guardarMa(Marca ma);
         bool guardarAp(AutoParte ap);
         bool guardarFac(Factura f);

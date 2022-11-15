@@ -61,8 +61,66 @@ namespace webApi.Controllers
                 return StatusCode(500, "Error interno! Intente luego");
             }
         }
+        [HttpGet("/ControllerTipoClie")]
+        public IActionResult getTipoClie()
+        {
+            List<TipoCliente> lsts = null;
+            try
+            {
+                lsts = dataApi.getTipoCliente();
+                return Ok(lsts);
 
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+        [HttpGet("/BARRIOS")]
+        public IActionResult getBarrio()
+        {
+            List<Barrio> lsts = null;
+            try
+            {
+                lsts = dataApi.getBarrios();
+                return Ok(lsts);
 
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+        [HttpGet("/PROVINCIAS")]
+        public IActionResult getProvincia()
+        {
+            List<Provincia> lsts = null;
+            try
+            {
+                lsts = dataApi.getProvincias();
+                return Ok(lsts);
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+        [HttpGet("/CIUDADES")]
+        public IActionResult getCiudades()
+        {
+            List<Ciudad> lsts = null;
+            try
+            {
+                lsts = dataApi.getCiudades();
+                return Ok(lsts);
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
 
         [HttpPost("/ADDMARCA")]
         public IActionResult PostMarca(Marca marca)

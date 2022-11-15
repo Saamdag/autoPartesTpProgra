@@ -27,6 +27,23 @@ namespace webApi.Controllers
             }
         }
 
+        [HttpPost("/ADDVEN")]
+        public IActionResult PostVendedor(Vendedor v)
+        {
+            try
+            {
+                if (v == null)
+                {
+                    return BadRequest("Datos de autoParte incorrectos!");
+                }
+
+                return Ok(dataApi.saveVen(v));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error interno! Intente luego: {ex.Message}");
+            }
+        }
 
     }
 }

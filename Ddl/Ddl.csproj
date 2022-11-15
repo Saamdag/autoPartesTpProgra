@@ -214,12 +214,15 @@
     <Compile Include="Datos\interfaces\IDAO.cs" />
     <Compile Include="Datos\Parametro.cs" />
     <Compile Include="Dominio\AutoParte.cs" />
+    <Compile Include="Dominio\Barrio.cs" />
+    <Compile Include="Dominio\Ciudad.cs" />
     <Compile Include="Dominio\Cliente.cs" />
     <Compile Include="Dominio\DetalleFactura.cs" />
     <Compile Include="Dominio\Factura.cs" />
     <Compile Include="Dominio\Marca.cs" />
     <Compile Include="Dominio\Modelo.cs" />
     <Compile Include="Dominio\Persona.cs" />
+    <Compile Include="Dominio\Provincia.cs" />
     <Compile Include="Dominio\TipoCliente.cs" />
     <Compile Include="Dominio\tipoProduccion.cs" />
     <Compile Include="Dominio\Vendedor.cs" />

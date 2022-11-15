@@ -92,3 +92,9 @@ C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\ne
 C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmVerDetalle.resources
 C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmVerArt.resources
 C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmAltaMarca.resources
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmAltaCliente.resources
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmAltaVendedor.resources
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmUpAutoParte.resources
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmVerClientes.resources
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmVerVendedores.resources
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmUpCliente.resources

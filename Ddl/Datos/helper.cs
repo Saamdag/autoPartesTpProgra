@@ -68,6 +68,49 @@ namespace Ddl.Datos
             return (int)pOut.Value;
         }
 
+        public bool EjecutarSQLParam(string strSql, List<SqlParameter> values)
+        {
+            bool ok = true;
+            SqlTransaction t = null;
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cnn.Open();
+                t = cnn.BeginTransaction();
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = strSql;
+                cmd.Transaction = t;
+
+                if (values != null)
+                {
+                    foreach (SqlParameter param in values)
+                    {
+                        cmd.Parameters.AddWithValue(param.ParameterName, param.Value);
+                    }
+                }
+
+                cmd.ExecuteNonQuery();
+                t.Commit();
+            }
+            catch (SqlException)
+            {
+                if (t != null)
+                {
+                    t.Rollback();
+                    ok = false;
+                }
+            }
+            finally
+            {
+                if (cnn != null && cnn.State == ConnectionState.Open)
+                    cnn.Close();
+
+            }
+
+            return ok;
+        }
 
         public bool EjecutarSQL(string strSql, List<Parametro> values)
         {
@@ -183,7 +226,7 @@ namespace Ddl.Datos
                 cmd.Transaction = t;
                 
                 cmd.Parameters.AddWithValue("@descripcion", ap.descripcion.ToString());
-                cmd.Parameters.AddWithValue("@fecha_fab", ap.fechaFabricacion.ToShortDateString());
+                cmd.Parameters.AddWithValue("@fecha_fab", ap.fechaFabricacion);
                 cmd.Parameters.AddWithValue("@id_tipo_produccion", ap.tipoProduccion.id);
                 cmd.Parameters.AddWithValue("@activo", ap.activo);
                 cmd.Parameters.AddWithValue("@precio", ap.precio);

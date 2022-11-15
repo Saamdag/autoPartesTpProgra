@@ -27,5 +27,23 @@ namespace webApi.Controllers
             }
         }
 
+        [HttpPost("/ADDCLI")]
+        public IActionResult PostCliente(Cliente c)
+        {
+            try
+            {
+                if (c == null)
+                {
+                    return BadRequest("Datos de autoParte incorrectos!");
+                }
+
+                return Ok(dataApi.saveCli(c));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error interno! Intente luego: {ex.Message}");
+            }
+        }
+
     }
 }
