@@ -30,7 +30,10 @@ namespace autoPartesTp
         {
             string url = "https://localhost:7035/CLIENTES";
             var result = await ClientSingleton.GetInstance().GetAsync(url);
+
+
             var lst = JsonConvert.DeserializeObject<List<Cliente>>(result);
+
             dataGridView1.Rows.Clear();
             foreach (Cliente c in lst)
             {

@@ -38,12 +38,6 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnCliente = new System.Windows.Forms.Button();
-            this.btnVendedor = new System.Windows.Forms.Button();
             this.btnEntreFechas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -130,56 +124,6 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Hasta";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(82, 329);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(86, 377);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 23);
-            this.comboBox2.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 336);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 15);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Cliente";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 380);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 15);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Vendedor";
-            // 
-            // btnCliente
-            // 
-            this.btnCliente.Location = new System.Drawing.Point(237, 329);
-            this.btnCliente.Name = "btnCliente";
-            this.btnCliente.Size = new System.Drawing.Size(22, 22);
-            this.btnCliente.TabIndex = 10;
-            this.btnCliente.UseVisualStyleBackColor = true;
-            // 
-            // btnVendedor
-            // 
-            this.btnVendedor.Location = new System.Drawing.Point(237, 378);
-            this.btnVendedor.Name = "btnVendedor";
-            this.btnVendedor.Size = new System.Drawing.Size(22, 22);
-            this.btnVendedor.TabIndex = 11;
-            this.btnVendedor.UseVisualStyleBackColor = true;
-            // 
             // btnEntreFechas
             // 
             this.btnEntreFechas.Location = new System.Drawing.Point(372, 279);
@@ -193,14 +137,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 450);
+            this.ClientSize = new System.Drawing.Size(580, 327);
             this.Controls.Add(this.btnEntreFechas);
-            this.Controls.Add(this.btnVendedor);
-            this.Controls.Add(this.btnCliente);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker2);
@@ -226,12 +164,6 @@
         private DateTimePicker dateTimePicker2;
         private Label label1;
         private Label label2;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private Label label3;
-        private Label label4;
-        private Button btnCliente;
-        private Button btnVendedor;
         private DataGridViewButtonColumn colDet;
         private Button btnEntreFechas;
     }
