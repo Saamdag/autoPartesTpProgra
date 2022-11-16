@@ -13,42 +13,43 @@ using System.Windows.Forms;
 
 namespace autoPartesTp
 {
-    public partial class FrmUpCliente : Form
+    public partial class FrmUpVendedor : Form
     {
-        private Cliente nuevo;
-        public FrmUpCliente(Cliente c)
+        private Vendedor nuevo;
+        public FrmUpVendedor(Vendedor v)
         {
             InitializeComponent();
-            nuevo = c;
+            nuevo = v;
         }
 
-        private async void FrmUpCliente_Load(object sender, EventArgs e)
+        private async void FrmUpVendedor_Load(object sender, EventArgs e)
         {
             await cargarCombo<Barrio>(cboBarrio, "BARRIOS", "nombre", "id");
             await cargarCombo<Provincia>(cboProv, "PROVINCIAS", "nombre", "id");
             await cargarCombo<Ciudad>(cboCiudad, "CIUDADES", "nombre", "id");
-            await cargarCombo<TipoCliente>(cboTipoCliente, "ControllerTipoClie", "tipoCliente", "idTipo");
 
-            cargarCliente();
-            
+            cargarVendedor();
+
         }
 
-        private void cargarCliente()
+        private async void btnCargar_Click(object sender, EventArgs e)
         {
-            
-            cboTipoCliente.Text = nuevo.tipoCliente.tipoCliente;
+            await updateCliente();
+        }
+
+        private void cargarVendedor()
+        {
             txtApellido.Text = nuevo.apellido;
             txtNombre.Text = nuevo.nombre;
             txtDireccion.Text = nuevo.direccion;
             cboBarrio.Text = nuevo.barrio.nombre;
             txtTelefono.Text = nuevo.telefono.ToString();
+            cboCiudad.Text = nuevo.ciudad.nombre;
+            cboProv.Text = nuevo.provincia.nombre;
+
             txtApellido.Enabled = false;
             txtNombre.Enabled = false;
-            
-
         }
-
-
 
         private async Task cargarCombo<T>(ComboBox cbo, string controller, string display, string value)
         {
@@ -61,11 +62,6 @@ namespace autoPartesTp
             cbo.SelectedIndex = -1;
         }
 
-        private async void btnCargar_Click(object sender, EventArgs e)
-        {
-           await updateCliente();
-        }
-
         private async Task updateCliente()
         {
             nuevo.nombre = txtNombre.Text;
@@ -75,23 +71,28 @@ namespace autoPartesTp
             nuevo.barrio = (Barrio)cboBarrio.SelectedItem;
             nuevo.provincia = (Provincia)cboProv.SelectedItem;
             nuevo.ciudad = (Ciudad)cboCiudad.SelectedItem;
-            nuevo.tipoCliente = (TipoCliente)cboTipoCliente.SelectedItem;
+            
 
             string bodyContent = JsonConvert.SerializeObject(nuevo);
 
 
-            string url = "https://localhost:7035/UPCLI";
+            string url = "https://localhost:7035/UPVEN";
             var result = await ClientSingleton.GetInstance().PutAsync(url, bodyContent);
 
             if (result.Equals("true"))//servicio.CrearPresupuesto(nuevo)
             {
-                MessageBox.Show("Cliente Actualizada", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vendedor Actualizada", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Dispose();
             }
             else
             {
-                MessageBox.Show("ERROR. No se pudo actualizar el Cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ERROR. No se pudo actualizar el Vendedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

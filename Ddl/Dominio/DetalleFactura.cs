@@ -13,7 +13,7 @@ namespace Ddl.Dominio
         public int cantidad { get; set; }
         public int bonificacion { get; set; }
         public int descuento { get; set; }
-
+        public decimal aux { get; set; }
         public DetalleFactura()
         {
             AutoParte = new AutoParte();

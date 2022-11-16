@@ -33,11 +33,13 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +55,6 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4,
             this.Column5,
             this.Column6,
             this.Column7,
@@ -61,7 +62,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 118);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(847, 284);
+            this.dataGridView1.Size = new System.Drawing.Size(753, 320);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -86,11 +87,6 @@
             this.Column3.HeaderText = "Telefono";
             this.Column3.Name = "Column3";
             // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Tipo";
-            this.Column4.Name = "Column4";
-            // 
             // Column5
             // 
             this.Column5.HeaderText = "Direccion";
@@ -111,16 +107,47 @@
             this.Column8.HeaderText = "Eliminar";
             this.Column8.Name = "Column8";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(304, 47);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Filtrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(121, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 15);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Apellido:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(181, 48);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.TabIndex = 4;
+            // 
             // FrmVerVendedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 450);
+            this.ClientSize = new System.Drawing.Size(770, 450);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmVerVendedores";
             this.Text = "FrmVerVendedores";
+            this.Load += new System.EventHandler(this.FrmVerVendedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -131,10 +158,12 @@
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewButtonColumn Column7;
         private DataGridViewButtonColumn Column8;
+        private Button button1;
+        private Label label1;
+        private TextBox textBox1;
     }
 }

@@ -13,6 +13,9 @@
     <Compile Update="FrmAltaMarca.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmAltaModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FrmAltaVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -23,6 +26,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmUpCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmUpVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmVerArt.cs">

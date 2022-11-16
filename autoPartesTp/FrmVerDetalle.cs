@@ -38,8 +38,16 @@ namespace autoPartesTp
             dataGridView1.Rows.Clear();
             foreach (DetalleFactura dt in lst)
             {
-                dataGridView1.Rows.Add(new object[] { dt.idDetalleNro,dt.AutoParte.descripcion,dt.cantidad,dt.bonificacion,dt.descuento });
+                string aux = "No";
+                if (dt.bonificacion == 1)
+                    aux = "Si";
+                dataGridView1.Rows.Add(new object[] { dt.idDetalleNro,dt.AutoParte.descripcion,dt.cantidad,aux,dt.descuento,dt.aux});
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

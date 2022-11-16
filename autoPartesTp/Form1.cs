@@ -69,5 +69,17 @@ namespace autoPartesTp
             FrmVerClientes vcl = new FrmVerClientes();
             vcl.ShowDialog();
         }
+
+        private void verToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            FrmVerVendedores v = new FrmVerVendedores();
+            v.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmAltaModelo f = new FrmAltaModelo();
+            f.ShowDialog();
+        }
     }
 }

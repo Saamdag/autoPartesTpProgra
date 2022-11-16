@@ -34,7 +34,6 @@ namespace autoPartesTp
             dataGridView1.Rows.Clear();
             foreach (Cliente c in lst)
             {
-
                 dataGridView1.Rows.Add(new object[] {c.idCliente,c.nombre,c.apellido,c.telefono.ToString(),c.tipoCliente.tipoCliente,c.direccion,c.barrio.nombre});
             }
         }
@@ -63,28 +62,53 @@ namespace autoPartesTp
             //Delete
             if (dataGridView1.CurrentCell.ColumnIndex == 8)
             {
-                //DialogResult result = MessageBox.Show("Desea eliminar el Cliente?", "Seguro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                //if (result == DialogResult.Yes)
-                //{
-                //    int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                DialogResult result = MessageBox.Show("Desea eliminar el Cliente?", "Seguro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
 
-                //    //string url = $"https://localhost:7035/UPAP?id={id}";
-                //    //var r = await ClientSingleton.GetInstance().DeleteAsync(url);
+                    IDataApi o = new DataApi();
+                    
+                    //    //string url = $"https://localhost:7035/UPAP?id={id}";
+                    //    //var r = await ClientSingleton.GetInstance().DeleteAsync(url);
 
-                //    //if (r.Equals("true"))//servicio.CrearPresupuesto(nuevo)
-                //    //{
-                //    //    MessageBox.Show("AutoParte Eliminada", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //    //    this.Dispose();
-                //    //}
-                //    //else
-                //    //{
-                //    //    MessageBox.Show("ERROR. No se pudo eliminar la AutoParte", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    //}
-                //    IDataApi o = new DataApi();
-                //    o.deleteAp(id);
+                    if (o.deleteCli(id))//servicio.CrearPresupuesto(nuevo)
+                    {
+                        MessageBox.Show("Cliente Eliminada", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                //    await cargarClientes();
-                //}
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR. No se pudo eliminar el Cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    //}
+                }
+
+                await cargarClientes();
+            }
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            if(textBox1.Text == "")
+            {
+                await cargarClientes();
+            }
+            else
+            {
+                string apellido = textBox1.Text;
+
+                string url = $"https://localhost:7035/CLIENTESAPE?apellido={apellido}";
+                var result = await ClientSingleton.GetInstance().GetAsync(url);
+                var lst = JsonConvert.DeserializeObject<List<Cliente>>(result);
+                dataGridView1.Rows.Clear();
+                foreach (Cliente c in lst)
+                {
+                    dataGridView1.Rows.Add(new object[] { c.idCliente, c.nombre, c.apellido, c.telefono.ToString(), c.tipoCliente.tipoCliente, c.direccion, c.barrio.nombre });
+                }
+
+
             }
         }
     }

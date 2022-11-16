@@ -55,14 +55,24 @@ namespace autoPartesTp
             string url = "";
             if (textBox1.Text.ToString() == "")
             {
-
-                await cargarProductosAsync();
+                if (cboEstado.Text == "Activo")
+                {
+                    url = $"https://localhost:7035/AUTOPARTESNOM?nombre=null&activo=true";
+                }
+                if (cboEstado.Text == "No Activo")
+                {
+                    url = $"https://localhost:7035/AUTOPARTESNOM?nombre=null&activo=false";
+                }
+                if (cboEstado.Text == ""|| cboEstado.Text == "-")
+                {
+                    url = "https://localhost:7035/AUTOPARTES";
+                }
             }
             else
             {
                 bool bol;
 
-                if (cboEstado.Text == "")
+                if (cboEstado.Text == "" || cboEstado.Text == "-")
                 {
                     url = $"https://localhost:7035/AUTOPARTESNOM?nombre={textBox1.Text}&activo=null ";
                 }
@@ -76,6 +86,7 @@ namespace autoPartesTp
                     url = $"https://localhost:7035/AUTOPARTESNOM?nombre={textBox1.Text}&activo={bol.ToString()}";
 
                 }
+            }
                 var result = await ClientSingleton.GetInstance().GetAsync(url);
                 var lst = JsonConvert.DeserializeObject<List<AutoParte>>(result);
 
@@ -93,8 +104,8 @@ namespace autoPartesTp
 
                     dataGridView1.Rows.Add(new object[] { aup.idArticulo, aup.descripcion, aup.fechaFabricacion, aup.tipoProduccion.tipo, act, aup.precio, aup.Marca.nombre, aup.Modelo.nombre });
                 }
-            }
         }
+        
 
         private async void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -98,3 +98,5 @@ C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\ne
 C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmVerClientes.resources
 C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmVerVendedores.resources
 C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmUpCliente.resources
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmUpVendedor.resources
+C:\Users\Samdag\Desktop\TUP\autoPartesAct\autoPartesTp\autoPartesTp\obj\Debug\net6.0-windows\autoPartesTp.FrmAltaModelo.resources

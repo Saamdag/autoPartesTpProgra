@@ -182,7 +182,7 @@
             // 
             // btnEntreFechas
             // 
-            this.btnEntreFechas.Location = new System.Drawing.Point(359, 279);
+            this.btnEntreFechas.Location = new System.Drawing.Point(372, 279);
             this.btnEntreFechas.Name = "btnEntreFechas";
             this.btnEntreFechas.Size = new System.Drawing.Size(22, 22);
             this.btnEntreFechas.TabIndex = 12;

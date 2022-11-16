@@ -38,6 +38,9 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +61,7 @@
             this.Column6,
             this.Column7,
             this.Column8});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 154);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 74);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(847, 284);
@@ -111,17 +114,47 @@
             this.Column8.HeaderText = "Eliminar";
             this.Column8.Name = "Column8";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(168, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Apellido:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(228, 32);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(346, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Filtrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmVerClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 450);
+            this.ClientSize = new System.Drawing.Size(871, 365);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmVerClientes";
             this.Text = "FrmVerClientes";
             this.Load += new System.EventHandler(this.FrmVerClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -137,5 +170,8 @@
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewButtonColumn Column7;
         private DataGridViewButtonColumn Column8;
+        private Label label1;
+        private TextBox textBox1;
+        private Button button1;
     }
 }

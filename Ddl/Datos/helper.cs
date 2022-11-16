@@ -261,12 +261,11 @@ namespace Ddl.Datos
 
             try
             {
-                SqlCommand cmd = new SqlCommand("SP_INSERT_FACTURA",cnn,t);
                 cnn.Open();
+                SqlCommand cmd;
                 t = cnn.BeginTransaction();
-      
+                cmd = new SqlCommand("SpInsertFact", cnn, t);
                 cmd.CommandType = CommandType.StoredProcedure;
-                
 
                 cmd.Parameters.AddWithValue("@fecha",f.fechaFactura);
                 cmd.Parameters.AddWithValue("@idCliente", f.cliente.idCliente);
@@ -278,14 +277,13 @@ namespace Ddl.Datos
                 pOut.Direction = ParameterDirection.Output;
                 cmd.Parameters.Add(pOut);
 
-
                 cmd.ExecuteNonQuery();
 
                 int idFactura = Convert.ToInt32(pOut.Value);
 
                 foreach (DetalleFactura dt in f.detalleFactura)
                 {
-                    SqlCommand command = new SqlCommand("SP_INSERT_DETALLE_FACTURA", cnn, t);
+                    SqlCommand command = new SqlCommand("SpInsertDetalle", cnn, t);
                     command.CommandType = CommandType.StoredProcedure;
 
                     command.Parameters.AddWithValue("@idFactura", idFactura);
@@ -301,8 +299,6 @@ namespace Ddl.Datos
                     command.Parameters.Clear();
 
                 }
-
-
 
 
                 t.Commit();
@@ -323,6 +319,27 @@ namespace Ddl.Datos
             }
 
             return ok;
+        }
+
+        public DataTable spSqlParam(string spNombre, List<SqlParameter> values)
+        {
+            DataTable tabla = new DataTable();
+
+            cnn.Open();
+            SqlCommand cmd = new SqlCommand(spNombre, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            if (values != null)
+            {
+                foreach (SqlParameter oParametro in values)
+                {
+                    cmd.Parameters.AddWithValue(oParametro.ParameterName, oParametro.Value);
+                }
+            }
+            tabla.Load(cmd.ExecuteReader());
+
+            cnn.Close();
+
+            return tabla;
         }
 
 

@@ -129,7 +129,7 @@ namespace webApi.Controllers
             {
                 if (marca == null)
                 {
-                    return BadRequest("Datos de autoParte incorrectos!");
+                    return BadRequest("Datos de Modelo incorrectos!");
                 }
 
                 return Ok(dataApi.saveMa(marca));
@@ -140,6 +140,23 @@ namespace webApi.Controllers
             }
         }
 
+        [HttpPost("/ADDMODELO")]
+        public IActionResult PostModelo(Modelo modelo)
+        {
+            try
+            {
+                if (modelo == null)
+                {
+                    return BadRequest("Datos de Modelo incorrectos!");
+                }
+
+                return Ok(dataApi.saveMp(modelo));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error interno! Intente luego: {ex.Message}");
+            }
+        }
 
     }
 }

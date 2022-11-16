@@ -66,7 +66,9 @@ namespace autoPartesTp
             //cargarFact con filtro entre fechas
             DateTime desde = dateTimePicker1.Value;
             DateTime hasta = dateTimePicker2.Value;
-            string url = $"https://localhost:7035/FACTURASENTRE?desde={desde.Day}%2F{desde.Month}%2F{desde.Year}&hasta={hasta.Day}%2F{hasta.Month}%2F{hasta.Year}";
+            //string url = $"https://localhost:7035/FACTURASENTRE?desde={desde.Day}%2F{desde.Month}%2F{desde.Year}&hasta={hasta.Day}%2F{hasta.Month}%2F{hasta.Year}";
+            string url = $"https://localhost:7035/FACTURASENTRE?desde={desde.Date.ToString("O")}&hasta={hasta.Date.ToString("O")}";
+
             var result = await ClientSingleton.GetInstance().GetAsync(url);
             var lst = JsonConvert.DeserializeObject<List<Factura>>(result);
             dataGridView1.Rows.Clear();

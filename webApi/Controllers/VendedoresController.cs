@@ -26,6 +26,21 @@ namespace webApi.Controllers
                 return StatusCode(500, "Error interno! Intente luego");
             }
         }
+        [HttpGet("/VENDEDORESAPE")]
+        public IActionResult GetVendedores(string apellido)
+        {
+            List<Vendedor> lst = null;
+            try
+            {
+                lst = dataApi.getVendedores(apellido);
+                return Ok(lst);
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
 
         [HttpPost("/ADDVEN")]
         public IActionResult PostVendedor(Vendedor v)
@@ -45,5 +60,24 @@ namespace webApi.Controllers
             }
         }
 
+        [HttpPut("/UPVEN")]
+        public IActionResult PutVendedor(Vendedor v)
+        {
+            try
+            {
+                if (v == null)
+                {
+                    return BadRequest("Datos de autoParte incorrectos!");
+                }
+
+                return Ok(dataApi.updateVen(v));
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

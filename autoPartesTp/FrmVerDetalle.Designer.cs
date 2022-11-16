@@ -34,6 +34,7 @@
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBoni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,13 +49,15 @@
             this.colDescr,
             this.colCantidad,
             this.colBoni,
-            this.colDesc});
+            this.colDesc,
+            this.Importe});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(544, 450);
+            this.dataGridView1.Size = new System.Drawing.Size(644, 196);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // colId
             // 
@@ -81,11 +84,16 @@
             this.colDesc.HeaderText = "Descuento";
             this.colDesc.Name = "colDesc";
             // 
+            // Importe
+            // 
+            this.Importe.HeaderText = "Importe";
+            this.Importe.Name = "Importe";
+            // 
             // FrmVerDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 450);
+            this.ClientSize = new System.Drawing.Size(644, 196);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmVerDetalle";
             this.Text = "FrmVerDetalle";
@@ -103,5 +111,6 @@
         private DataGridViewTextBoxColumn colCantidad;
         private DataGridViewTextBoxColumn colBoni;
         private DataGridViewTextBoxColumn colDesc;
+        private DataGridViewTextBoxColumn Importe;
     }
 }

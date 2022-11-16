@@ -11,6 +11,21 @@ namespace webApi.Controllers
     {
         private IDataApi dataApi = new DataApi();
 
+        [HttpGet("/PROXID")]
+        public IActionResult GetId()
+        {
+            int id;
+            try
+            {
+                id = dataApi.proxId();
+                return Ok(id);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error interno! Intente luego: {ex.Message}");
+            }
+        }
+
         [HttpPost("/ADDFAC")]
         public IActionResult PostFact(Factura fac)
         {
@@ -45,13 +60,15 @@ namespace webApi.Controllers
                 return StatusCode(500, "Error interno! Intente luego");
             }
         }
+
+
         [HttpGet("/FACTURASENTRE")]
         public IActionResult getFacturas(DateTime desde, DateTime hasta)
         {
             List<Factura> lst = null;
             try
             {
-                lst = dataApi.getFacturas(desde, hasta);
+                lst = dataApi.getFacturas(desde.Date, hasta.Date);
                 return Ok(lst);
 
             }

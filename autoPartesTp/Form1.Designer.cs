@@ -47,6 +47,7 @@
             this.nuevaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,7 +86,7 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // clientesToolStripMenuItem
@@ -94,20 +95,20 @@
             this.verToolStripMenuItem1,
             this.nuevoToolStripMenuItem1});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             // 
             // verToolStripMenuItem1
             // 
             this.verToolStripMenuItem1.Name = "verToolStripMenuItem1";
-            this.verToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.verToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
             this.verToolStripMenuItem1.Text = "Ver";
             this.verToolStripMenuItem1.Click += new System.EventHandler(this.verToolStripMenuItem1_Click);
             // 
             // nuevoToolStripMenuItem1
             // 
             this.nuevoToolStripMenuItem1.Name = "nuevoToolStripMenuItem1";
-            this.nuevoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.nuevoToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
             this.nuevoToolStripMenuItem1.Text = "Nuevo";
             this.nuevoToolStripMenuItem1.Click += new System.EventHandler(this.nuevoToolStripMenuItem1_Click);
             // 
@@ -117,7 +118,7 @@
             this.verToolStripMenuItem3,
             this.nuevoToolStripMenuItem2});
             this.vendedoresToolStripMenuItem.Name = "vendedoresToolStripMenuItem";
-            this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vendedoresToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.vendedoresToolStripMenuItem.Text = "Vendedores";
             // 
             // verToolStripMenuItem3
@@ -125,6 +126,7 @@
             this.verToolStripMenuItem3.Name = "verToolStripMenuItem3";
             this.verToolStripMenuItem3.Size = new System.Drawing.Size(109, 22);
             this.verToolStripMenuItem3.Text = "Ver";
+            this.verToolStripMenuItem3.Click += new System.EventHandler(this.verToolStripMenuItem3_Click);
             // 
             // nuevoToolStripMenuItem2
             // 
@@ -181,7 +183,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(362, 364);
+            this.button1.Location = new System.Drawing.Point(713, 27);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -189,11 +191,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(614, 27);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(83, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Add-Modelo";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -227,5 +240,6 @@
         private ToolStripMenuItem verToolStripMenuItem3;
         private ToolStripMenuItem nuevoToolStripMenuItem2;
         private Button button1;
+        private Button button2;
     }
 }

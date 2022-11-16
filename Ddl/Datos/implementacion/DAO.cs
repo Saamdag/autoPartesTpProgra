@@ -13,6 +13,31 @@ namespace Ddl.Datos.implementacion
 {
     public class DAO : IDAO
     {
+        public bool updateCli(Cliente c)
+        {
+            List<SqlParameter> list = new List<SqlParameter>();
+            list.Add(new SqlParameter("@id", c.idCliente));
+            list.Add(new SqlParameter("@tipo", c.tipoCliente.idTipo));
+
+            list.Add(new SqlParameter("@tel", c.telefono));
+            list.Add(new SqlParameter("@direc", c.direccion));
+            list.Add(new SqlParameter("@barrio", c.barrio.id));
+
+
+            return helper.Instancia().EjecutarSQLParam("SpUpClie", list);
+
+        }
+        public bool updateVen(Vendedor v)
+        {
+            List<SqlParameter> list = new List<SqlParameter>();
+            list.Add(new SqlParameter("@id", v.idVendedor));
+            list.Add(new SqlParameter("@tel", v.telefono));
+            list.Add(new SqlParameter("@direc", v.direccion));
+            list.Add(new SqlParameter("@barrio", v.barrio.id));
+
+            return helper.Instancia().EjecutarSQLParam("SpUpVen", list);
+        }
+
         public bool updateAp(AutoParte ap)
         {
             List<SqlParameter> list = new List<SqlParameter>();
@@ -24,8 +49,21 @@ namespace Ddl.Datos.implementacion
             list.Add(new SqlParameter("@idMarca", ap.Marca.id));
             list.Add(new SqlParameter("@idModelo", ap.Modelo.id));
 
-            return helper.Instancia().EjecutarSQLParam("SpUpAutoPartes", list);
+            return helper.Instancia().EjecutarSQLParam("SpUpAutoPartes", list); 
 
+        }
+
+        public bool deleteVen(int id)
+        {
+            List<SqlParameter> list = new List<SqlParameter>();
+            list.Add(new SqlParameter("@id", id));
+            return helper.Instancia().EjecutarSQLParam("SpDeleteVen", list);
+        }
+        public bool deleteCli(int id)
+        {
+            List<SqlParameter> list = new List<SqlParameter>();
+            list.Add(new SqlParameter("@id", id));
+            return helper.Instancia().EjecutarSQLParam("SpDeleteCli", list);
         }
         public bool deleteAp(int id)
         {
@@ -40,6 +78,13 @@ namespace Ddl.Datos.implementacion
             values.Add(new Parametro("@nombre", m.nombre));
             return helper.Instancia().EjecutarSQL("spInsertMarcas", values);
            
+        }
+        public bool guardarMo(Modelo m)
+        {
+            List<Parametro> values = new List<Parametro>();
+            values.Add(new Parametro("@nombre", m.nombre));
+            return helper.Instancia().EjecutarSQL("spInsertModelos", values);
+
         }
         public bool guardarVen(Vendedor v)
         {
@@ -138,15 +183,37 @@ namespace Ddl.Datos.implementacion
 
             List<AutoParte> autoPartes = new List<AutoParte> ();
 
-            DataTable dt=new DataTable();
+            DataTable dt=null;
+            if(nombre == "null")
+            {
+                if (activo == string.Empty || activo == "null")
+                    dt = helper.Instancia().querySql($"exec listarApNom null,null", null);
+                if (activo == "true" || activo == "True")
+                    dt = helper.Instancia().querySql($"exec listarApNom null,1", null);
+                if (activo == "false" || activo == "False")
+                    dt = helper.Instancia().querySql($"exec listarApNom null,0", null);
+            }
+            else
+            {
+                if (activo == string.Empty || activo == "null")
+                    dt = helper.Instancia().querySql($"exec listarApNom '{nombre}',null", null);
+                if (activo == "true" || activo == "True")
+                    dt = helper.Instancia().querySql($"exec listarApNom '{nombre}',1", null);
+                if (activo == "false" || activo == "False")
+                    dt = helper.Instancia().querySql($"exec listarApNom '{nombre}',0", null);
+            }
 
-            if(activo == string.Empty || activo=="null")
-               dt= helper.Instancia().querySql($"exec listarAutoparteNombre '{nombre}',null", null);
-            if (activo=="True")
-                dt = helper.Instancia().querySql($"exec listarAutoparteNombre '{nombre}',1", null);
-            if (activo == "False")
-                dt = helper.Instancia().querySql($"exec listarAutoparteNombre '{nombre}',0", null);
 
+            //if(activo == string.Empty || activo=="null")
+            //   dt= helper.Instancia().querySql($"exec listarAutoparteNombre '{nombre}',null", null);
+            //if (activo=="true")
+            //    dt = helper.Instancia().querySql($"exec listarAutoparteNombre '{nombre}',1", null);
+            //if (activo == "false")
+            //    dt = helper.Instancia().querySql($"exec listarAutoparteNombre '{nombre}',0", null);
+            if (dt==null || dt.Rows.Count == 0 )
+            {
+                return autoPartes;
+            }
 
             foreach (DataRow fila in dt.Rows)
             {
@@ -191,7 +258,7 @@ namespace Ddl.Datos.implementacion
 
         public List<Vendedor> obtenerVendedores()
         {
-            DataTable dt = helper.Instancia().querySql("select * from VisVendedores", null);
+            DataTable dt = helper.Instancia().querySql("select * from VisVen", null);
             List<Vendedor> result = new List<Vendedor>();
 
             foreach (DataRow fila in dt.Rows)
@@ -199,9 +266,10 @@ namespace Ddl.Datos.implementacion
                 Vendedor v = new Vendedor();
                 v.idVendedor = (int)fila[0];
                 v.nombre = (string)fila[1];
-                v.telefono = Convert.ToInt64(fila[2]);
-                v.direccion = fila[3].ToString();
-                v.barrio.id= (int)fila[4];
+                v.apellido = fila[2].ToString();
+                v.telefono = Convert.ToInt64(fila[3]);
+                v.direccion = fila[4].ToString();
+                v.barrio.nombre= fila[5].ToString();
                 result.Add(v);
             }
 
@@ -270,7 +338,9 @@ namespace Ddl.Datos.implementacion
             ls.Add(new SqlParameter("@desde", desde));
             ls.Add(new SqlParameter("@hasta", hasta));
 
-            DataTable dt = helper.Instancia().querySqlParam("spFacturasEntre", ls);
+            //DataTable dt = helper.Instancia().querySqlParam("spFacturasEntre", ls);
+            DataTable dt = helper.Instancia().spSqlParam($"spFacturasEntre", ls);
+
             List<Factura> result = new List<Factura>();
 
             foreach (DataRow fila in dt.Rows)
@@ -289,14 +359,17 @@ namespace Ddl.Datos.implementacion
         }
         public List<DetalleFactura> obtenerDetalles(int id)
         {
-            DataTable dt = helper.Instancia().querySql($"select * from VisDetFac where id_factura={id}", null);
+           // DataTable dt = helper.Instancia().querySql($"select * from VisDetFac where id_factura={id}", null);
+            DataTable dt = helper.Instancia().querySql($"select * from VisDet where idFactura={id}", null);
+
             List<DetalleFactura> result = new List<DetalleFactura>();
 
             foreach (DataRow fila in dt.Rows)
             {
                DetalleFactura det = new DetalleFactura();
-                AutoParte ap = new AutoParte();
-                det.AutoParte = ap;
+                det.aux = (decimal)fila[6];
+                //AutoParte ap = new AutoParte();
+                //det.AutoParte = ap;
                det.idDetalleNro = (int)fila[0];
                det.AutoParte.descripcion = fila[2].ToString();
                 det.cantidad = (int)fila[3];
@@ -353,6 +426,52 @@ namespace Ddl.Datos.implementacion
                 lst.Add(ciudad);
             }
             return lst;
+        }
+
+        public List<Cliente> obtenerClientes(string apellido)
+        {
+            DataTable dt = helper.Instancia().querySql($"select * from VisClie where Apellido like '%{apellido}%' ", null);
+            List<Cliente> result = new List<Cliente>();
+
+            foreach (DataRow fila in dt.Rows)
+            {
+                Cliente cliente = new Cliente();
+                cliente.idCliente = (int)fila[0];
+                cliente.nombre = (string)fila[1];
+                cliente.apellido = (string)fila[2];
+                cliente.telefono = Convert.ToInt64(fila[3]);
+                cliente.tipoCliente.tipoCliente = fila[4].ToString();
+                cliente.direccion = fila[5].ToString();
+                cliente.barrio.nombre = (string)fila[6].ToString();
+                result.Add(cliente);
+            }
+
+            return result;
+        }
+
+        public List<Vendedor> obtenerVendedores(string apellido)
+        {
+            DataTable dt = helper.Instancia().querySql($"select * from VisVen where Apellido like '%{apellido}%' ", null);
+            List<Vendedor> result = new List<Vendedor>();
+
+            foreach (DataRow fila in dt.Rows)
+            {
+                Vendedor v = new Vendedor();
+                v.idVendedor = (int)fila[0];
+                v.nombre = (string)fila[1];
+                v.apellido = fila[2].ToString();
+                v.telefono = Convert.ToInt64(fila[3]);
+                v.direccion = fila[4].ToString();
+                v.barrio.nombre = fila[5].ToString();
+                result.Add(v);
+            }
+
+            return result;
+        }
+
+        public int proxId()
+        {
+            return helper.Instancia().ConsultaEscalarSQL("spProxId", "@next");
         }
     }
 }

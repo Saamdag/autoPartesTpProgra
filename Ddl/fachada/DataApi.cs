@@ -18,6 +18,11 @@ namespace Ddl.fachada
             dao = new DAO();
         }
 
+        public bool updateCli(Cliente c)
+        {
+            return dao.updateCli(c);
+        }
+
         public List<Cliente> getClientes()
         {
             return dao.obtenerClientes();
@@ -87,6 +92,15 @@ namespace Ddl.fachada
         {
             return dao.guardarMa(m);
         }
+        public bool saveMp(Modelo m)
+        {
+            return dao.guardarMo(m);
+        }
+
+        public bool updateVen(Vendedor v)
+        {
+            return dao.updateVen(v);
+        }
 
         public bool updateAp(AutoParte ap)
         {
@@ -96,6 +110,15 @@ namespace Ddl.fachada
         public bool deleteAp(int id)
         {
             return dao.deleteAp(id);
+        }
+        public bool deleteVen(int id)
+        {
+            return dao.deleteVen(id);
+        }
+
+        public bool deleteCli(int id)
+        {
+            return dao.deleteCli(id);
         }
 
         public List<Barrio> getBarrios()
@@ -121,6 +144,21 @@ namespace Ddl.fachada
         public bool saveCli(Cliente c)
         {
             return dao.guardarCli(c);
+        }
+
+        public List<Cliente> getClientes(string apellido)
+        {
+            return dao.obtenerClientes(apellido);
+        }
+
+        public List<Vendedor> getVendedores(string apellido)
+        {
+            return dao.obtenerVendedores(apellido);
+        }
+
+        public int proxId()
+        {
+            return dao.proxId();
         }
     }
 }

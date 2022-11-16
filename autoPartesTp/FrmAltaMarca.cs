@@ -46,5 +46,15 @@ namespace autoPartesTp
                 MessageBox.Show("ERROR. No se pudo registrar la Marca", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
