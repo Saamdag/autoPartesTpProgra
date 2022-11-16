@@ -61,29 +61,29 @@ namespace autoPartesTp
             }
 
             //Delete
-            if (dataGridView1.CurrentCell.ColumnIndex == 7)
-            {
-                DialogResult result = MessageBox.Show("Desea eliminar el Vendedor?", "Seguro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            //if (dataGridView1.CurrentCell.ColumnIndex == 7)
+            //{
+            //    DialogResult result = MessageBox.Show("Desea eliminar el Vendedor?", "Seguro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //    if (result == DialogResult.Yes)
+            //    {
+            //        int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
 
-                    IDataApi o = new DataApi();
+            //        IDataApi o = new DataApi();
 
-                    if (o.deleteVen(id))//servicio.CrearPresupuesto(nuevo)
-                    {
-                        MessageBox.Show("Vendedor Eliminada", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        if (o.deleteVen(id))//servicio.CrearPresupuesto(nuevo)
+            //        {
+            //            MessageBox.Show("Vendedor Eliminada", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    }
-                    else
-                    {
-                        MessageBox.Show("ERROR. No se pudo eliminar el Vendedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("ERROR. No se pudo eliminar el Vendedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        }
 
-                    await cargarVendedores();
+            //        await cargarVendedores();
                     
-                }
-            }
+            //    }
+            //}
         }
 
         private async void button1_Click(object sender, EventArgs e)

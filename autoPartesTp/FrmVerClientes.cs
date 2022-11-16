@@ -66,8 +66,8 @@ namespace autoPartesTp
                 if (result == DialogResult.Yes)
                 {
                     int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-
                     IDataApi o = new DataApi();
+
                     
                     //    //string url = $"https://localhost:7035/UPAP?id={id}";
                     //    //var r = await ClientSingleton.GetInstance().DeleteAsync(url);

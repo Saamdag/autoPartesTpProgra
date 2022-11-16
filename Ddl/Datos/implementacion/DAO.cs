@@ -55,15 +55,99 @@ namespace Ddl.Datos.implementacion
 
         public bool deleteVen(int id)
         {
-            List<SqlParameter> list = new List<SqlParameter>();
-            list.Add(new SqlParameter("@id", id));
-            return helper.Instancia().EjecutarSQLParam("SpDeleteVen", list);
+            bool ok = true;
+            //List<SqlParameter> list = new List<SqlParameter>();
+            //list.Add(new SqlParameter("@id", id));
+            //return helper.Instancia().EjecutarSQLParam("SpDeleteVen", list);
+
+            try
+            {
+                List<SqlParameter> list = new List<SqlParameter>();
+                list.Add(new SqlParameter("@id", id));
+                DataTable dt = helper.Instancia().spSqlParam("idFactDelet", list);
+                List<int> idFacts = new List<int>();
+
+                foreach (DataRow fila in dt.Rows)
+                {
+                    idFacts.Add(Convert.ToInt32(fila[0]));
+
+                }
+
+                foreach (int item in idFacts)
+                {
+                    List<SqlParameter> lista = new List<SqlParameter>();
+                    lista.Add(new SqlParameter("@idFact", item));
+
+                    helper.Instancia().spSqlParam("SpDeleteDetalle", lista);
+
+                }
+
+                List<SqlParameter> listaa = new List<SqlParameter>();
+                listaa.Add(new SqlParameter("@id", id));
+                helper.Instancia().spSqlParam("SpDeleteFactura", listaa);
+
+                List<SqlParameter> listaaa = new List<SqlParameter>();
+                listaaa.Add(new SqlParameter("@id", id));
+                helper.Instancia().spSqlParam("SpDeleteCliente", listaa);
+
+
+
+            }
+            catch (Exception ex)
+            {
+                ok = false;
+                throw;
+            }
+
+            return ok;
+
         }
         public bool deleteCli(int id)
         {
-            List<SqlParameter> list = new List<SqlParameter>();
-            list.Add(new SqlParameter("@id", id));
-            return helper.Instancia().EjecutarSQLParam("SpDeleteCli", list);
+            bool ok = true;
+            //List<SqlParameter> list = new List<SqlParameter>();
+            //list.Add(new SqlParameter("@id", id));
+            //return helper.Instancia().spSqlParam("SpDeleteCli", list);
+            try
+            {
+                 List<SqlParameter> list = new List<SqlParameter>();
+                 list.Add(new SqlParameter("@id", id));
+                 DataTable dt = helper.Instancia().spSqlParam("idFactDelet", list);
+                 List<int> idFacts = new List<int>();
+
+                 foreach (DataRow fila in dt.Rows)
+                 {
+                     idFacts.Add(Convert.ToInt32(fila[0]));
+
+                 }
+
+                 foreach (int item in idFacts)
+                 {
+                     List<SqlParameter> lista = new List<SqlParameter>();
+                     lista.Add(new SqlParameter("@idFact", item));
+
+                     helper.Instancia().spSqlParam("SpDeleteDetalle", lista);
+
+                 }
+
+                 List<SqlParameter> listaa = new List<SqlParameter>();
+                 listaa.Add(new SqlParameter("@id", id));
+                 helper.Instancia().spSqlParam("SpDeleteFactura", listaa);
+
+                List<SqlParameter> listaaa = new List<SqlParameter>();
+                listaaa.Add(new SqlParameter("@id", id));
+                helper.Instancia().spSqlParam("SpDeleteCliente", listaa);
+
+
+
+            }
+            catch (Exception ex)
+            {
+                ok = false;
+                throw;
+            }
+
+            return ok;
         }
         public bool deleteAp(int id)
         {
